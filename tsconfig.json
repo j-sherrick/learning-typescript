@@ -1,0 +1,17 @@
+{
+   "extends": "@tsconfig/node18/tsconfig.json",
+   "display": "Node 18",
+   "_version": "18.19.1",
+   "compilerOptions": {
+      "lib": ["es2022", "dom"],
+      "module": "nodenext",
+      "target": "es2022",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "nodenext",
+      "baseUrl": "./"
+   },
+   "files": ["src/index.ts"]
+}

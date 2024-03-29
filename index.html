@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Google Maps API | TypeScript</title>
+      <link rel="stylesheet" href="./dist/styles.css" />
+   </head>
+   <body>
+      <div class="container">
+         <div class="banner">
+            <span class="branding">
+               <h1>Google Maps API</h1>
+            </span>
+            <nav class="links">
+               <a href="webcam.html">Maps</a>
+               <a href="webcam.html">Webcam</a>
+            </nav>
+         </div>
+         <header class="content-header">
+            <h2>Marker Magic</h2>
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate, quisquam labore impedit optio pariatur expedita, accusantium eum magni rerum eaque id delectus sunt tempora non perspiciatis doloribus officiis cum alias.</span>
+         </header>
+         <div id="map"></div>
+         <form action="" method="get" class="address-form">
+            <div class="address-form__text">
+               <label for="address01">Address Line 1:</label>
+               <input type="text" name="address01" id="address01">
+            </div>
+            <div class="address-form__text">
+               <label for="address02">Address Line 2:</label>
+               <input type="text" name="address02" id="address02">
+            </div>
+            <div class="addess-form__select">
+               <label for="state">State:</label>
+               <select id="state" name="state">
+                  <option value="alabama">Alabama</option>
+                  <option value="alaska">Alaska</option>
+                  <option value="arizona">Arizona</option>
+                  <option value="arkansas">Arkansas</option>
+                  <option value="california">California</option>
+                  <option value="colorado">Colorado</option>
+                  <option value="connecticut">Connecticut</option>
+                  <option value="delaware">Delaware</option>
+                  <option value="florida">Florida</option>
+                  <option value="georgia">Georgia</option>
+                  <option value="hawaii">Hawaii</option>
+                  <option value="idaho">Idaho</option>
+                  <option value="illinois">Illinois</option>
+                  <option value="indiana">Indiana</option>
+                  <option value="iowa">Iowa</option>
+                  <option value="kansas">Kansas</option>
+                  <option value="kentucky">Kentucky</option>
+                  <option value="louisiana">Louisiana</option>
+                  <option value="maine">Maine</option>
+                  <option value="maryland">Maryland</option>
+                  <option value="massachusetts">Massachusetts</option>
+                  <option value="michigan">Michigan</option>
+                  <option value="minnesota">Minnesota</option>
+                  <option value="mississippi">Mississippi</option>
+                  <option value="missouri">Missouri</option>
+                  <option value="montana">Montana</option>
+                  <option value="nebraska">Nebraska</option>
+                  <option value="nevada">Nevada</option>
+                  <option value="new hampshire">New Hampshire</option>
+                  <option value="new jersey">New Jersey</option>
+                  <option value="new mexico">New Mexico</option>
+                  <option value="new york">New York</option>
+                  <option value="north carolina">North Carolina</option>
+                  <option value="north dakota">North Dakota</option>
+                  <option value="ohio">Ohio</option>
+                  <option value="oklahoma">Oklahoma</option>
+                  <option value="oregon">Oregon</option>
+                  <option value="pennsylvania">Pennsylvania</option>
+                  <option value="rhode island">Rhode Island</option>
+                  <option value="south carolina">South Carolina</option>
+                  <option value="south dakota">South Dakota</option>
+                  <option value="tennessee">Tennessee</option>
+                  <option value="texas">Texas</option>
+                  <option value="utah">Utah</option>
+                  <option value="vermont">Vermont</option>
+                  <option value="virginia">Virginia</option>
+                  <option value="washington">Washington</option>
+                  <option value="west virginia">West Virginia</option>
+                  <option value="wisconsin">Wisconsin</option>
+                  <option value="wyoming">Wyoming</option>
+               </select>
+            </div>
+            <div class="address-form__numeric">
+               <label for="address02">Zip Code:</label>
+               <input type="text" name="address02" id="address02">
+            </div>
+            <div class="address-form__submit">
+               <input type="submit" name="marker" id="marker" value="Add Marker">
+            </div>
+         </form>
+      </div>
+      
+      <script>
+         ((g) => {
+            var h,
+               a,
+               k,
+               p = 'The Google Maps JavaScript API',
+               c = 'google',
+               l = 'importLibrary',
+               q = '__ib__',
+               m = document,
+               b = window;
+            b = b[c] || (b[c] = {});
+            var d = b.maps || (b.maps = {}),
+               r = new Set(),
+               e = new URLSearchParams(),
+               u = () =>
+                  h ||
+                  (h = new Promise(async (f, n) => {
+                     await (a = m.createElement('script'));
+                     e.set('libraries', [...r] + '');
+                     for (k in g)
+                        e.set(
+                           k.replace(/[A-Z]/g, (t) => '_' + t[0].toLowerCase()),
+                           g[k]
+                        );
+                     e.set('callback', c + '.maps.' + q);
+                     a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                     d[q] = f;
+                     a.onerror = () => (h = n(Error(p + ' could not load.')));
+                     a.nonce = m.querySelector('script[nonce]')?.nonce || '';
+                     m.head.append(a);
+                  }));
+            d[l]
+               ? console.warn(p + ' only loads once. Ignoring:', g)
+               : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+         })({
+            key: 'AIzaSyAXw18OkL1_XJiEymT5q7_C8J7I1M8rHDE',
+            v: 'weekly'
+            // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+            // Add other bootstrap parameters as needed, using camel case.
+         });
+      </script>
+      <script type="module" src="./src/index.ts" async defer></script>
+   </body>
+</html>
