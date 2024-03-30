@@ -5,7 +5,7 @@
    "main": "index.js",
    "type": "module",
    "scripts": {
-      "dev": "npx parcel --https index.html"
+      "dev": "npx parcel --https index.html webcam.html"
    },
    "keywords": [
       "typescript",
